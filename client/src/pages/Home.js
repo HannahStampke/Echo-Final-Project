@@ -1,4 +1,14 @@
 import React from 'react';
+import {
+  waveAnimation,
+  contentContainer,
+  introSection,
+  introText,
+  userPictureContainer,
+  wave,
+  aboutSection,
+  aboutText,
+} from "../styles/HomeStyle";
 
 const Home = () => {
 
