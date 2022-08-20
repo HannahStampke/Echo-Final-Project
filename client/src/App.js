@@ -10,6 +10,8 @@ import Profile from './pages/Profile';
 import NotFound from './pages/Notfound';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
+import Quiz from './pages/Quiz';
+import AddQuestions from './pages/Addquestions';
 
 import Header from './components/Header';
 
@@ -58,9 +60,18 @@ function App() {
               element={<Signup/>}
             />
             <Route 
+              path="/quiz"
+              element={<Quiz/>}
+            />
+            <Route 
+              path="/addquestions"
+              element={<AddQuestions/>}
+            />
+            <Route 
               path="*"
               element={<NotFound />}
             />
+
           </Routes>
         </Container>
       </Router>

@@ -23,3 +23,22 @@ mutation Login($email: String!, $password: String!) {
     }
   }
 }`
+
+export const ADD_QUESTION = gql`
+mutation AddQuestion($question: String, $correctchoice: String, $incorrectchoice: String) {
+  addQuestion(question: $question, correctchoice: $correctchoice, incorrectchoice: $incorrectchoice) {
+      question
+      correctchoice
+      incorrectchoice
+  }
+}`
+
+// export const ADD_QUIZDATA = gql`
+// mutation CompleteQuiz($question: String, $correctchoice: String, $incorrectchoice: String) {
+//   addQuestion(question: $question, correctchoice: $correctchoice, incorrectchoice: $incorrectchoice) {
+//     token
+//     CompleteQuiz {
+//       answers
+//     }
+//   }
+// }`

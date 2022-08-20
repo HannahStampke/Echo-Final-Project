@@ -1,0 +1,17 @@
+[
+    {
+        "question": "How old are you?",
+        "correctchoice": "26",
+        "incorrectchoice": "81"
+    },
+    {
+        "question": "What is your daughters name?",
+        "correctchoice": "Olga",
+        "incorrectchoice": "Peter"
+    },
+    {
+        "question": "What month is your Birthday",
+        "correctchoice": "October",
+        "incorrectchoice": "December"
+    }
+]

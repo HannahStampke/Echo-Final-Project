@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models');
+const { User, Question } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -12,6 +12,9 @@ const resolvers = {
         return User.findOne({ email: context.user.email});
       }
       throw new AuthenticationError('You must be signed in');
+    },
+    questions: async () => {
+      return Question.find();
     },
   },
 
@@ -37,6 +40,11 @@ const resolvers = {
       const token = signToken(user);
 
       return { token, user };
+    },
+    addQuestion: async (parent, {question, correctchoice, incorrectchoice}) => {
+      const createdQuestion = await Question.create({question, correctchoice, incorrectchoice});
+      console.log(question);
+      return createdQuestion;
     },
   },
 };

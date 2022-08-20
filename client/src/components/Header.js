@@ -1,17 +1,17 @@
-import React from "react";
+import React, {useState} from "react";
+
 import {
-    headerContainer,
-    contentContainer,
-    leftContainer,
-    innerContainer,
-    extendedContainer,
-    linkTag,
-    extendedLinkTag,
-    menuButton,  
+    HeaderContainer,
+    ContentContainer,
+    LeftContainer,
+    MenuButton,
+    ExtendedContainer,
+    LinkTag, 
 } from "../styles/HeaderStyle";
 
 import auth from "../utils/auth";
-import {link} from "react-router-dom";
+import {Link} from "react-router-dom";
+import Profile from "../pages/Profile";
 
 const Header = ({theme}) => {
     const logout = (event) => {
@@ -20,33 +20,43 @@ const Header = ({theme}) => {
     };
 
     return (
-        <Header>
+        <div>
             {auth.loggedIn() ? (
-                <headerContainer>
-                    <leftContainer>
+                <HeaderContainer>
+                    <LeftContainer>
                         <h1>ECHO</h1>
-                    </leftContainer>
-                </headerContainer>
+                    </LeftContainer>
+                </HeaderContainer>
             ) : (
-                <extendedContainer>
+                <ContentContainer>
                     <div>
                         <h2>
+                            <br>
+                            </br>
                             Reverberate the past.
                         </h2>
                     </div>
-                    <linkTag to= "/signup">
-                        <button>
-                            Log In
-                        </button>
-                    </linkTag>
-                    <linkTag to= "/login">
-                        <button>
-                            Sign Up
-                        </button>
-                    </linkTag>
-                </extendedContainer>
+                    <ExtendedContainer>
+                            <MenuButton button to= "/signup">
+                                Log In
+                                About Me
+                            <LinkTag
+                            onClick={() => handlePageChange("signup")}
+                            ></LinkTag>
+                            </MenuButton>
+                            <MenuButton button to= "/login">
+                                Sign Up
+                            </MenuButton>
+                            <MenuButton button to= "/profile">
+                                Profile
+                            </MenuButton>
+                            <MenuButton button to= "/results">
+                                Results
+                            </MenuButton>
+                    </ExtendedContainer>
+                </ContentContainer>
             )}
-        </Header>
+        </div>
     );
 };
 

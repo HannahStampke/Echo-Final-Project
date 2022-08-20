@@ -1,5 +1,5 @@
 import styled, {css} from "styled-components";
-import {colours} from ".../assets/colours";
+import {colours} from "../assets/colours";
 
 const v = {
     headerHeight: "50px",
@@ -13,31 +13,64 @@ const v = {
     0 2px 2px rgba(0,0,0,0.20)`
 };
 
-const buttonReset = css`
+export const QuizContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    background-color: ${colours.jaggedice};
+    color: ${colours.riverbed};
+    font-size: ${v};
+    text-align: center;
+    font-weight: normal;
+    border-radius: 25px;
+    margin: 20px;
+`
+
+export const ChoiceContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-self: center;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: ${colours.jaggedice};
+    color: ${colours.riverbed};
+    border-radius: 25px;
+    margin: ${v};
+`
+
+export const ButtonReset = css`
     font-family: inherit;
-    outline: none;
-    border: none;
-    background: none;
+    background: ${colours.riverbed};
     letter-spacing: inherit;
-    colour: inherit;
-    font-size: inherit;
-    text-align: inherit;
+    color: ${colours.feijoa};
+    font-size: 20px;
+    text-align: center;
     padding: 0;
 `;
 
-export const sForm = styled.form`
-  width: 60%;
-  border: 4px solid ${colour.riverbed};
+export const SForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 4px solid ${colours.hopbush};
   border-radius: ${v.borderRadius};
   padding: ${v.mdSpacing};
+  font-size: ${v};
+  align-self: center;
+  align-items: center;
+  font-weight: bold;
 `;
 
-export const sFormTitle = styled.span`
+export const SFormTitle = styled.span`
   font-size: 24px;
   font-weight: 600;
 `;
 
-export const sFormControl = styled.div`
+export const SFormControl = styled.div`
   :first-of-type {
     margin-top: ${v.mdSpacing};
   }
@@ -46,24 +79,28 @@ export const sFormControl = styled.div`
   }
 `;
 
-export const sLabel = styled.label`
+export const SLabel = styled.label`
   display: block;
+  align-self: auto;
   font-size: 16px;
   font-weight: 600;
   margin-left: 4px;
   margin-bottom: calc(${v.smSpacing} / 4);
 `;
 
-export const sInput = styled.input`
+export const SInput = styled.input`
   outline: none;
   border: 1px solid ${({ theme }) => theme.textFade};
   width: 90%;
   padding: ${v.smSpacing};
+  margin: 1%;
   font-size: 16px;
   border-radius: ${v.borderRadius};
+  border-color: ${colours.riverbed};
+  color: ${colours.riverbed};
 `;
 
-export const sMessage = styled.textarea`
+export const SMessage = styled.textarea`
   outline: none;
   border: 1px solid ${({ theme }) => theme.textFade};
   width: 90%;
@@ -73,15 +110,20 @@ export const sMessage = styled.textarea`
   border-radius: ${v.borderRadius};
 `;
 
-export const sButton = styled.button`
-  ${buttonReset};
-  width: 100%;
-  background: ${colours.hopbush};
-  color: ${colours.jaggedice};
+export const SButton = styled.button`
+  ${ButtonReset};
+  width: 30%;
+  background: ${colours.feijoa};
+  font-weight: bold;
+  font-size: ${v};
+  color: ${colours.riverbed};
   padding: ${v.smSpacing};
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-self: auto;
+  border-width: 0px;
   border-radius: ${v.borderRadius};
-  margin-top: ${v.mdSpacing};
+  margin-top: 40px;
+  margin-bottom: 40px;
   cursor: pointer;
 `;

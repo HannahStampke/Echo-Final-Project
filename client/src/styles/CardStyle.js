@@ -1,7 +1,7 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import { colours } from "../assets/colours";
 
-export const cardContainer = styled.div`
+export const CardContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -10,7 +10,7 @@ export const cardContainer = styled.div`
   align-items: center;
 `;
 
-export const projectCard = styled.div`
+export const ProjectCard = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -35,21 +35,21 @@ export const projectCard = styled.div`
   }
 `;
 
-export const cardImage = styled.img`
+export const CardImage = styled.img`
   border-radius: 5% 5% 0 0;
   object-fit: cover;
   width: 100%;
 `;
 
-export const cardTitle = styled.h3`
+export const CardTitle = styled.h3`
   margin: 2%;
 `;
 
-export const cardDescription = styled.p`
+export const CardDescription = styled.p`
   margin: 2%;
 `;
 
-export const link = styled.a`
+export const CardLink = styled.a`
   text-decoration: none;
   color: ${colours.terracotta};
 `

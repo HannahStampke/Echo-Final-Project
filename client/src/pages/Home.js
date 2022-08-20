@@ -1,22 +1,15 @@
 import React from 'react';
 import {
-  waveAnimation,
-  contentContainer,
-  introSection,
-  introText,
-  userPictureContainer,
-  wave,
-  aboutSection,
-  aboutText,
+  ContentContainer,
 } from "../styles/HomeStyle";
 
 const Home = () => {
 
   return (
     <main>
-      <div className="flex-row justify-center">
+      <ContentContainer>
         homepage
-      </div>
+      </ContentContainer>
     </main>
   );
 };

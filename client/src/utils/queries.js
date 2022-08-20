@@ -9,3 +9,13 @@ query Me {
   }
 }
 `;
+
+export const QUERY_QUESTIONS= gql`
+query Questions {
+  questions {
+    question
+    correctchoice
+    incorrectchoice
+  }
+}
+`

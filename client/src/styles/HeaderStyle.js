@@ -1,6 +1,7 @@
+import styled from "styled-components";
 import { colours } from "../assets/colours";
 
-export const headerContainer = styled.header`
+export const HeaderContainer = styled.header`
   width: 100%;
   min-height: 80px;
   display: flex;
@@ -9,15 +10,19 @@ export const headerContainer = styled.header`
   color: ${colours.feijoa};
 `;
 
-export const contentContainer = styled.div`
+export const ContentContainer = styled.div`
   width: 100%;
   max-width: 1500px;
   min-height: 80px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  background-color: ${colours.hopbush};
+  color: ${colours.jaggedice};
+  font-size: 40px;
 `;
 
-export const leftContainer = styled.div`
+export const LeftContainer = styled.div`
   flex: 40%;
   display: flex;
   justify-content: space-between;
@@ -28,29 +33,27 @@ export const leftContainer = styled.div`
   }
 `;
 
-export const innerContainer = styled.div`
+export const InnerContainer = styled.div`
   width: 100%;
   height: 80px;
   display: flex;
   flex-direction: row;
 `;
 
-export const extendedContainer = styled.div`
+export const ExtendedContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
+  flex-direction: row;
   width: 100%;
   top: 80px;
-  background-color: ${colours.rhino};
-  opacity: 90%;
+  background-color: ${colours.jaggedice};
   z-index: 99;
+  justify-content: center;
   @media (min-width: 700px) {
-    display: none;
+    display: flex;
   }
 `;
 
-export const linkTag = styled.a`
+export const LinkTag = styled.a`
   text-decoration: none;
   font-size: large;
   cursor: pointer;
@@ -61,7 +64,7 @@ export const linkTag = styled.a`
   }
 `;
 
-export const extendedLinkTag = styled.a`
+export const ExtendedLinkTag = styled.a`
   text-decoration: none;
   cursor: pointer;
   font-size: large;
@@ -70,15 +73,18 @@ export const extendedLinkTag = styled.a`
     props.current ? `color: ${colours.hopbush}; font-weight: bold;` : ``}
 `;
 
-export const menuButton = styled.button`
-  width: 70px;
-  height: 50px;
-  background: none;
-  border: none;
-  color: ${colours.feijoa};
-  font-size: 45px;
+export const MenuButton = styled.button`
+  width: 90px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  background: ${colours.hopbush};
+  border-radius: 10px;
+  margin: 20px;
+  color: ${colours.jaggedice};
+  font-size: 20px;
   cursor: pointer;
   @media (min-width: 700px) {
-    display: none;
+    display: flex;
   }
 `;
