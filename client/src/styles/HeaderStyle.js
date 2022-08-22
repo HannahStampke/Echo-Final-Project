@@ -10,6 +10,12 @@ export const HeaderContainer = styled.header`
   color: ${colours.feijoa};
 `;
 
+export const StyledH2 = styled.h2`
+text-align: center;
+color: ${colours.jaggedice};
+  font-size: 40px;
+`;
+
 export const ContentContainer = styled.div`
   width: 100%;
   max-width: 1500px;
@@ -83,6 +89,24 @@ export const MenuButton = styled.button`
   margin: 20px;
   color: ${colours.jaggedice};
   font-size: 20px;
+  cursor: pointer;
+  @media (min-width: 700px) {
+    display: flex;
+  }
+`;
+
+export const OtherButton = styled.button`
+  width: 140px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  background: ${colours.feijoa};
+  border-radius: 10px;
+  margin: 40px;
+  color: ${colours.jaggedice};
+  font-size: 25px;
+  font-weight: bold;
+  
   cursor: pointer;
   @media (min-width: 700px) {
     display: flex;

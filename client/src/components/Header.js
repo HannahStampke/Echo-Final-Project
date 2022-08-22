@@ -37,21 +37,11 @@ const Header = ({theme}) => {
                         </h2>
                     </div>
                     <ExtendedContainer>
-                            <MenuButton button to= "/signup">
-                                Log In
-                                About Me
-                            <LinkTag
-                            onClick={() => handlePageChange("signup")}
-                            ></LinkTag>
+                            <MenuButton>
+                                <Link to= "/login">Log In</Link>
                             </MenuButton>
-                            <MenuButton button to= "/login">
-                                Sign Up
-                            </MenuButton>
-                            <MenuButton button to= "/profile">
-                                Profile
-                            </MenuButton>
-                            <MenuButton button to= "/results">
-                                Results
+                            <MenuButton>
+                            <Link to= "/signup">Sign Up</Link>
                             </MenuButton>
                     </ExtendedContainer>
                 </ContentContainer>

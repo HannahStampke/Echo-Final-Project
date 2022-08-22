@@ -8,7 +8,7 @@ const v = {
     lgSpacing: `30px`,
     xlSpacing: `40px`,
     xxlSpacing: `60px`,
-    borderRadius: "5px",
+    borderRadius: "15px",
     boxShadow: `0 1px 1px rgba(0,0,0,0.20), 
     0 2px 2px rgba(0,0,0,0.20)`
 };
@@ -25,7 +25,6 @@ export const QuizContainer = styled.div`
     font-size: ${v};
     text-align: center;
     font-weight: normal;
-    border-radius: 25px;
     margin: 20px;
 `
 
@@ -126,4 +125,47 @@ export const SButton = styled.button`
   margin-top: 40px;
   margin-bottom: 40px;
   cursor: pointer;
+`;
+
+export const ExistingHeader = styled.div`
+  flex-direction: row;
+  width: 100%;
+  min-height: 80px;
+  display: flexbox;
+  justify-content: center;
+  align-self: center;
+  justify-self: center;
+  font-size: 40px;
+  background-color: ${colours.rhino};
+  color: ${colours.feijoa};
+`;
+
+export const QuestionCard = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  align-self: center;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: ${colours.jaggedice};
+  font-size: 20px;
+  font-weight: bold;
+  color: ${colours.riverbed};
+  border-radius: 25px;
+  margin: 20px;
+`;
+
+export const QuestionItem = styled.div`
+  display: block;
+  justify-content: space-evenly;
+
+  flex-direction: row;
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: ${colours.jaggedice};
+  font-size: 20px;
+  font-weight: bold;
+  color: ${colours.riverbed};
 `;

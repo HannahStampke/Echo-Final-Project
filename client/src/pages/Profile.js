@@ -12,6 +12,9 @@ import {
     HomeHeaderContainer,
 } from "../styles/HomeStyle";
 
+import NavBar from "../components/NavBar"
+import ActiveQuestions from '../components/ActiveQuestions';
+
 const Profile = () => {
     const {loading, data} = useQuery(QUERY_ME);
 
@@ -26,20 +29,27 @@ const Profile = () => {
     const profileData = data?.me || {}
 
     return (
+        <div>
+        <NavBar></NavBar>
         <ContentContainer>
             <HomeHeaderContainer>
                 <br></br>
-                Profile
+                {profileData.username}'s Profile
                 <br></br>
             </HomeHeaderContainer>
+            <br></br><br></br>
             <IntroText>
-                Id: {profileData._id}
+                <img alt="elliot's image" src="../public/Elliot.jpeg"></img>
+                <br></br>
+                Username: {profileData.username}
                 <br/>
                 Email: {profileData.email}
-                <br/>
-                Username: {profileData.username}
+                <br/><br></br>
             </IntroText>
         </ContentContainer>
+        <br></br><br></br>
+        <ActiveQuestions></ActiveQuestions>
+        </div>
     );
 };
 

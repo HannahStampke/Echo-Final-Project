@@ -5,15 +5,15 @@ import { setContext } from '@apollo/client/link/context';
 
 import Container from 'react-bootstrap/Container';
 
+import AddQuestions from './pages/Addquestions';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import NotFound from './pages/Notfound';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Quiz from './pages/Quiz';
-import AddQuestions from './pages/Addquestions';
-
 import Header from './components/Header';
+import Welcome from './pages/Welcome';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -43,9 +43,13 @@ function App() {
         <Header/>
         <Container>
           <Routes>
+            <Route
+              path="/"
+              element={<Welcome/>}
+            />
             <Route 
-              path="/" 
-              element={<Home />}
+              path="/home" 
+              element={<Home/>}
             />
             <Route 
               path="/profile" 
@@ -60,12 +64,12 @@ function App() {
               element={<Signup/>}
             />
             <Route 
-              path="/quiz"
-              element={<Quiz/>}
-            />
-            <Route 
               path="/addquestions"
               element={<AddQuestions/>}
+            />
+            <Route 
+              path="/quiz"
+              element={<Quiz/>}
             />
             <Route 
               path="*"

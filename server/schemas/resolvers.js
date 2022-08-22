@@ -14,7 +14,10 @@ const resolvers = {
       throw new AuthenticationError('You must be signed in');
     },
     questions: async () => {
-      return Question.find();
+      return Question.find().sort({createdAt: -1});
+    },
+    question: async (parent,{questionId}) => {
+      return Question.findOne({_id: questionID});
     },
   },
 
@@ -46,6 +49,9 @@ const resolvers = {
       console.log(question);
       return createdQuestion;
     },
+    // removeQuestion: async (parent, {questionId}) => {
+    //   return Question.findOneAndDelete({_id: questionId});
+    // },
   },
 };
 

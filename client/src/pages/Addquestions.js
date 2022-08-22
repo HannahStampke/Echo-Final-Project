@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
+import { QUERY_QUESTIONS } from '../utils/queries';
 import { ADD_QUESTION } from '../utils/mutations';
+
 import {
     ButtonReset,
     SForm,
@@ -13,8 +15,15 @@ import {
     SMessage,
     SButton,
     QuizContainer,
+    QuestionCard,
+    ExistingHeader,
 } from "../styles/QuizStyle";
 
+import {
+  HomeHeaderContainer,
+} from "../styles/HomeStyle";
+
+import NavBar from "../components/NavBar";
 import Auth from '../utils/auth';
 
 const AddQuestions = () => {
@@ -48,68 +57,75 @@ const AddQuestions = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">
+    <main>
+      <div>
+        <NavBar></NavBar>
+        <div>
+          <HomeHeaderContainer>
             <br></br>
             Add a Unique Question
             <br></br><br></br>
-          </h4>
-          <div className="card-body">
+          </HomeHeaderContainer>
+          <div>
             {data ? (
               <p>
-                Success! You added a question.
-                <Link to="/">back to the homepage.</Link>
+                Success! You added a question. Feel free to head back to the 
+                <Link to="/"> homepage.</Link>
               </p>
             ) : (
-                <QuizContainer>
-                    <SForm onSubmit={handleFormSubmit}>
-                    <SLabel>
-                            Question
-                        </SLabel>
-                        <SInput
-                        className="form-input"
-                        placeholder="Enter a question"
-                        name="question"
-                        type="text"
-                        value={formState.question}
-                        onChange={handleChange}
-                        />
-                        <SLabel>
-                            <br></br>
-                            Correct Answer
-                        </SLabel>
-                        <SInput
-                        className="form-input"
-                        placeholder="Enter the correct answer"
-                        name="correctchoice"
-                        type="text"
-                        value={formState.correctchoice}
-                        onChange={handleChange}
-                        />
-                        <SLabel>
-                        <br></br>
-                            Incorrect Answer
-                        </SLabel>
-                        <SInput
-                        className="form-input"
-                        placeholder="Enter an incorrect answer"
-                        name="incorrectchoice"
-                        type="text"
-                        value={formState.incorrectchoice}
-                        onChange={handleChange}
-                        />
-                        <br></br>
-                        <SButton
-                        className="btn btn-block btn-primary"
-                        style={{ cursor: 'pointer' }}
-                        type="submit"
-                        >
-                            Add Question
-                        </SButton>
-                    </SForm>
-                </QuizContainer>
+                <div>
+                  <QuizContainer>
+                      <SForm onSubmit={handleFormSubmit}>
+                      <SLabel>
+                              Question
+                          </SLabel>
+                          <SInput
+                          className="form-input"
+                          placeholder="Enter a question"
+                          name="question"
+                          type="text"
+                          value={formState.question}
+                          onChange={handleChange}
+                          />
+                          <SLabel>
+                              <br></br>
+                              Correct Answer
+                          </SLabel>
+                          <SInput
+                          className="form-input"
+                          placeholder="Enter the correct answer"
+                          name="correctchoice"
+                          type="text"
+                          value={formState.correctchoice}
+                          onChange={handleChange}
+                          />
+                          <SLabel>
+                          <br></br>
+                              Incorrect Answer
+                          </SLabel>
+                          <SInput
+                          className="form-input"
+                          placeholder="Enter an incorrect answer"
+                          name="incorrectchoice"
+                          type="text"
+                          value={formState.incorrectchoice}
+                          onChange={handleChange}
+                          />
+                          <br></br>
+                          <SButton
+                          className="btn btn-block btn-primary"
+                          style={{ cursor: 'pointer' }}
+                          type="submit"
+                          >
+                              Add Question
+                          </SButton>
+                      </SForm>
+                  </QuizContainer>
+                  <QuestionCard>
+                    See your active questions on the
+                    <Link to="/profile"> profile page.</Link>
+                  </QuestionCard>
+                </div>
             )}
 
             {error && (

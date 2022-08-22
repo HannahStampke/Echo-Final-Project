@@ -11,6 +11,7 @@ import auth from "../utils/auth";
 import {Link} from "react-router-dom";
 import Profile from "../pages/Profile";
 import TheQuiz from "../components/TheQuiz";
+import NavBar from "../components/NavBar";
 
 const Quiz = ({theme}) => {
     const logout = (event) => {
@@ -21,17 +22,25 @@ const Quiz = ({theme}) => {
     return (
         <div>
             {auth.loggedIn() ? (
-                <HeaderContainer>
-                    <LeftContainer>
-                        <h1>ECHO</h1>
-                    </LeftContainer>
-                </HeaderContainer>
-            ) : (
+                <div>
+                <NavBar>
+                </NavBar>
+                <br></br><br></br><br></br><br></br>
                 <ContentContainer id="quiz">
                     <ContentContainer>
                         <TheQuiz></TheQuiz>
                     </ContentContainer>
                 </ContentContainer>
+                </div>
+            ) : (
+                <div>
+                <NavBar></NavBar>
+                <ContentContainer id="quiz">
+                    <ContentContainer>
+                        <TheQuiz></TheQuiz>
+                    </ContentContainer>
+                </ContentContainer>
+                </div>
             )}
         </div>
     );

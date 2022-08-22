@@ -11,12 +11,14 @@ export const ContentContainer = styled.div`
 `;
 
 export const HomeHeaderContainer = styled.h1`
+  flex-direction: row;
   width: 100%;
   min-height: 80px;
-  display: flex;
+  display: flexbox;
   justify-content: center;
-  background-color: ${colours.rhino};
-  color: ${colours.feijoa};
+  align-self: center;
+  background-color: ${colours.feijoa};
+  color: ${colours.rhino};
 `;
 
 export const IntroSection = styled.div`

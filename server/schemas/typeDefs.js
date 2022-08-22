@@ -13,6 +13,7 @@ const typeDefs = gql`
   }
 
   type Question {
+    _id: ID
     question: String
     correctchoice: String
     incorrectchoice: String
@@ -28,6 +29,7 @@ const typeDefs = gql`
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addQuestion(question: String, correctchoice: String, incorrectchoice: String): Question
+
   }
 `;
 
