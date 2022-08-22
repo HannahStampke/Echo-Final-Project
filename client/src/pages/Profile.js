@@ -3,12 +3,7 @@ import React from 'react';
 import { QUERY_ME } from '../utils/queries';
 import {
     ContentContainer,
-    IntroSection,
     IntroText,
-    UserPictureContainer,
-    IntroImage,
-    AboutSection,
-    HomeLink,
     HomeHeaderContainer,
 } from "../styles/HomeStyle";
 
@@ -39,7 +34,6 @@ const Profile = () => {
             </HomeHeaderContainer>
             <br></br><br></br>
             <IntroText>
-                <img alt="elliot's image" src="../public/Elliot.jpeg"></img>
                 <br></br>
                 Username: {profileData.username}
                 <br/>

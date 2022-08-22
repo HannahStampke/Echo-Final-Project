@@ -34,15 +34,14 @@ mutation AddQuestion($question: String, $correctchoice: String, $incorrectchoice
   }
 }`
 
-// export const REMOVE_QUESTION = gql`
-// mutation deleteQuestion($filter: QuestionFilter!) {
-//   deleteQuestion(filter: $filter) {
-//     msg
-//     question {
-//       _id
-//       question
-//       correctchoice
-//       incorrectchoice
-//     }
-//   }
-// }`
+export const REMOVE_QUESTION = gql`
+  mutation removeQuestion($questionId: ID!) {
+    removeQuestion(questionId: $questionId) {
+      _id
+      question
+      correctchoice
+      incorrectchoice
+      }
+    }
+  }
+`

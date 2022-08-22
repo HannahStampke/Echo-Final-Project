@@ -13,6 +13,7 @@ query Me {
 export const QUERY_QUESTIONS= gql`
 query Questions {
   questions {
+    _id
     question
     correctchoice
     incorrectchoice

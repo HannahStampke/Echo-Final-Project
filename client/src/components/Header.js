@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 
 import {
     HeaderContainer,
@@ -6,12 +6,10 @@ import {
     LeftContainer,
     MenuButton,
     ExtendedContainer,
-    LinkTag, 
 } from "../styles/HeaderStyle";
 
 import auth from "../utils/auth";
 import {Link} from "react-router-dom";
-import Profile from "../pages/Profile";
 
 const Header = ({theme}) => {
     const logout = (event) => {

@@ -1,20 +1,15 @@
 import { useQuery } from '@apollo/client';
-import React, {useState} from "react";
+import React from "react";
 import { QUERY_ME } from '../utils/queries';
 
 import {
-    HeaderContainer,
     ContentContainer,
-    LeftContainer,
     MenuButton,
     ExtendedContainer,
-    LinkTag, 
     StyledH2,
 } from "../styles/HeaderStyle";
 
-import auth from "../utils/auth";
 import {Link} from "react-router-dom";
-import Profile from "../pages/Profile";
 
 const NavBar = ({theme}) => {
     const {data} = useQuery(QUERY_ME);

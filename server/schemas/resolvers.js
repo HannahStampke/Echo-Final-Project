@@ -49,9 +49,21 @@ const resolvers = {
       console.log(question);
       return createdQuestion;
     },
-    // removeQuestion: async (parent, {questionId}) => {
-    //   return Question.findOneAndDelete({_id: questionId});
-    // },
+    removeQuestion: async (parent, { questionId }) => {
+      if (context.question) {
+        const question = await Question.findOneAndDelete({
+          _id: questionId,
+        });
+  
+        await Question.findOneAndUpdate(
+          { _id: context.question._id },
+          { $pull: { questions: question._id } }
+        );
+  
+        return question
+      }
+      throw new AuthenticationError('You need to be logged in!');
+    },
   },
 };
 

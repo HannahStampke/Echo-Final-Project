@@ -15,11 +15,11 @@ const questionSchema = new Schema({
     type: String,
     required: true,
   },
-  // createdAt: {
-  //   type: Date,
-  //   default: Date.now,
-  //   get: (timestamp) => dateFormat(timestamp),
-  // },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    get: (timestamp) => dateFormat(timestamp),
+  },
   // If your user needs more properties, add them here. Don't forget to add them to the typeDefs.js, resolvers.js and the userSeeds.
 });
 

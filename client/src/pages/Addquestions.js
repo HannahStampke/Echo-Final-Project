@@ -2,21 +2,15 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
-import { QUERY_QUESTIONS } from '../utils/queries';
 import { ADD_QUESTION } from '../utils/mutations';
 
 import {
-    ButtonReset,
     SForm,
-    SFormTitle,
-    SFormControl,
     SLabel,
     SInput,
-    SMessage,
     SButton,
     QuizContainer,
     QuestionCard,
-    ExistingHeader,
 } from "../styles/QuizStyle";
 
 import {
@@ -24,7 +18,7 @@ import {
 } from "../styles/HomeStyle";
 
 import NavBar from "../components/NavBar";
-import Auth from '../utils/auth';
+
 
 const AddQuestions = () => {
   const [formState, setFormState] = useState({

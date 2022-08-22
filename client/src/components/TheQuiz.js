@@ -1,17 +1,10 @@
-import React, {useState} from "react";
-import { Link } from 'react-router-dom';
+import React from "react";
 import { useQuery } from '@apollo/client';
 import { QUERY_QUESTIONS } from '../utils/queries';
 
 import {
     QuizContainer,
-    ButtonReset,
     SForm,
-    SFormTitle,
-    SFormControl,
-    SLabel,
-    SInput,
-    SMessage,
     SButton,
     ChoiceContainer,
 } from "../styles/QuizStyle";

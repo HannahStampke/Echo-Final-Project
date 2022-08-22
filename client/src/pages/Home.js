@@ -1,6 +1,5 @@
-import { useQuery } from '@apollo/client';
 import React from 'react';
-import { QUERY_ME } from '../utils/queries';
+
 import {
   ContentContainer,
 } from "../styles/HomeStyle";
