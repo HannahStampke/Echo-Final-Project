@@ -169,3 +169,20 @@ export const QuestionItem = styled.div`
   font-weight: bold;
   color: ${colours.riverbed};
 `;
+
+export const SLabbo = styled.label`
+  width: 40%;
+  background: ${colours.feijoa};
+  font-weight: bold;
+  font-size: 30px;
+  color: ${colours.riverbed};
+  padding: ${v.smSpacing};
+  display: flex;
+  justify-content: space-around;
+  align-self: auto;
+  border-width: 0px;
+  border-radius: ${v.borderRadius};
+  margin-top: 40px;
+  margin-bottom: 40px;
+  cursor: pointer;
+`;

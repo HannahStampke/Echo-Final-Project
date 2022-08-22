@@ -1,12 +1,14 @@
 import React from "react";
 import { useQuery } from '@apollo/client';
 import { QUERY_QUESTIONS } from '../utils/queries';
+import {Link} from "react-router-dom";
 
 import {
     QuizContainer,
     SForm,
     SButton,
     ChoiceContainer,
+    SLabbo,
 } from "../styles/QuizStyle";
 import {
     ContentContainer,
@@ -29,18 +31,23 @@ const TheQuiz = () => {
         <SForm>
             Quiz
             {questionData.map(question => (
-                <QuizContainer>
-                    {question.question}
+            <div>
+                <label for="qstn">{question.question}</label>
                 <ChoiceContainer>
-                <SButton>
-                    {question.correctchoice}
-                </SButton>
-                <SButton>
-                    {question.incorrectchoice}
-                </SButton>
+                <SLabbo for="correct">{question.correctchoice}
+                <input type="radio" id="correct" name="correct"></input>
+                </SLabbo>
+                <br></br><br></br>
+                <SLabbo for="incorrect">{question.incorrectchoice}
+                <input type="radio" id="incorrect" name="incorrect"></input>
+                </SLabbo>
+                <br></br><br></br>
                 </ChoiceContainer>
-                </QuizContainer>
+            </div>
             )) }
+            <SButton type="submit"style={{ cursor: 'pointer' }}>
+                <Link to="/submitted">Submit</Link>
+            </SButton>
         </SForm>
     )
 }

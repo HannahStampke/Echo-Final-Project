@@ -41,7 +41,6 @@ export const REMOVE_QUESTION = gql`
       question
       correctchoice
       incorrectchoice
-      }
     }
   }
 `

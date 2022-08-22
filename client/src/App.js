@@ -14,6 +14,7 @@ import Signup from './pages/Signup';
 import Quiz from './pages/Quiz';
 import Header from './components/Header';
 import Welcome from './pages/Welcome';
+import Submitted from './pages/Submitted';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -50,6 +51,10 @@ function App() {
             <Route 
               path="/home" 
               element={<Home/>}
+            />
+            <Route
+              path="/submitted"
+              element={<Submitted/>}
             />
             <Route 
               path="/profile" 
