@@ -7,11 +7,6 @@
     {
         "question": "What is your daughters name?",
         "correctchoice": "Olga",
-        "incorrectchoice": "Peter"
+        "incorrectchoice": "Olivia"
     },
-    {
-        "question": "What month is your Birthday",
-        "correctchoice": "October",
-        "incorrectchoice": "December"
-    }
 ]
